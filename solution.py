@@ -1,11 +1,15 @@
 import pandas as pd
 import numpy as np
 
+from scipy.stats import cramervonmises_2samp
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
 
-def solution(...) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+chat_id = 753487228 # Ваш chat ID, не меняйте название переменной
+
+SGN_LVL = 0.01
+
+def solution(x: np.array, y: np.array) -> bool:
+    pval = cramervonmises_2samp(x,y).pvalue
+    if pval < SGN_LVL:
+        return True
+    return False
