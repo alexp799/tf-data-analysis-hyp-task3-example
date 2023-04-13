@@ -6,7 +6,7 @@ from scipy.stats import cramervonmises_2samp
 
 chat_id = 753487228 # Ваш chat ID, не меняйте название переменной
 
-SGN_LVL = 0.01
+SGN_LVL = 0.02
 
 def solution(x: np.array, y: np.array) -> bool:
     pval = cramervonmises_2samp(x,y).pvalue
